@@ -7,6 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-  <h1> 안녕! </h1>
+  <h1> 게시판 </h1>
+  <table>
+    <tr>
+      <th>제목</th>
+      <th>작성시간</th>
+    </tr>
+    {% for article in articles %}
+    <tr>
+      <td><a href="{{article.pk}}/" style='text-decoration: none; color: black'><p>{{article.title}}</p></a></td>
+      <td><p>{{article.created_at}}</p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/articles/new"><button>글쓰기</button></a>
 </body>
 </html>
